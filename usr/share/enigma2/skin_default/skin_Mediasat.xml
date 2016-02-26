@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+	<!-- IMPORT -->
+
+  <screen name="ListMenuMediaTX0">
+    <widget source="list" render="Listbox" position="590,110" size="600,500" zPosition="2" font="Regular;24" scrollbarMode="showOnDemand" selectionPixmap="PLi-HD/buttons/sel.png" transparent="1">
+      <convert type="TemplatedMultiContent">
+         {"template": [
+         MultiContentEntryText(pos = (60, 1), size = (720, 34), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+         MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (36, 36), png = 1),
+         ],
+         "fonts": [gFont("Regular", 24)],
+         "itemHeight": 45
+        }
+      </convert>
+    </widget>
+  </screen>
+
+  <screen name="ListMenuMediaTX1">
+    <widget source="list" render="Listbox" position="590,110" size="600,500" zPosition="2" font="Regular;24" scrollbarMode="showOnDemand" selectionPixmap="PLi-HD/buttons/sel.png" transparent="1">
+      <convert type="TemplatedMultiContent">
+         {"template": [
+         MultiContentEntryText(pos = (60, 1), size = (720, 34), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+         MultiContentEntryPixmapAlphaTest(pos = (4, 2), size = (36, 36), png = 2),
+         ],
+         "fonts": [gFont("Regular", 24)],
+         "itemHeight": 45
+        }
+      </convert>
+    </widget>
+  </screen>
+
+  <screen name="ListMenuMediaTXOnly0">
+    <widget source="list" render="Listbox" position="590,110" size="600,500" zPosition="2" font="Regular;24" scrollbarMode="showOnDemand" selectionPixmap="PLi-HD/buttons/sel.png" transparent="1">
+      <convert type="TemplatedMultiContent">
+         {"template": [
+         MultiContentEntryText(pos = (20, 1), size = (720, 34), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+         ],
+         "fonts": [gFont("Regular", 24)],
+         "itemHeight": 45
+        }
+      </convert>
+    </widget>
+  </screen>
+
+  <screen name="ListMenuMediaTXOnly1">
+    <widget source="list" render="Listbox" position="590,110" size="600,500" zPosition="2" font="Regular;24" scrollbarMode="showOnDemand" selectionPixmap="PLi-HD/buttons/sel.png" transparent="1">
+      <convert type="TemplatedMultiContent">
+         {"template": [
+         MultiContentEntryText(pos = (20, 1), size = (720, 34), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+         ],
+         "fonts": [gFont("Regular", 24)],
+         "itemHeight": 45
+        }
+      </convert>
+    </widget>
+  </screen>
+
+	<!-- Blue Panel Principale Con infoCAM -->
+  
+  <screen name="MediasatBlue" title="MediaSat BluePanel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGY"/>
+    <!-- Cams Selection, News, Timeline, Parental Control, About, Icona Cam -->
+    <widget name="config" position="590,122" size="626,102" zPosition="2" transparent="1" />
+    <widget name="conn" position="924,310" size="311,237" font="Regular;20" halign="center" valign="center" zPosition="3" foregroundColor="green" transparent="1" />
+    <widget name="lab1" position="947,229" size="289,28" font="Regular;22" zPosition="2" foregroundColor="blue" transparent="1" />
+    <widget name="lab2" position="590,229" size="343,28" font="Regular;22" zPosition="2" foregroundColor="blue" transparent="1" />
+    <widget name="lab3" position="590,264" size="343,28" font="Regular;22" zPosition="2" foregroundColor="blue" transparent="1" />
+    <widget name="lab4" position="947,264" size="289,28" font="Regular;22" zPosition="2" foregroundColor="blue" transparent="1" />
+    <widget name="info_ecm" position="590,310" size="627,242" font="Regular; 21" zPosition="2" foregroundColor="yellow" transparent="1" />
+    <widget source="conninfo" render="Label" zPosition="1" position="611,561" size="625,60" font="Regular;20" valign="center" halign="left" foregroundColor="blue" transparent="1" backgroundColor="black" />
+  </screen>
+
+	<!-- Blue Panel > Blue > Setting Menu -->
+
+  <screen name="MediasatSettings" title="MediaSat Settings" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <!-- MediaSat -->
+    <panel name="ListMenuMediaTX0"/>
+  </screen>
+
+	<!-- Blue Panel > Green > Backup Menu -->
+
+  <screen name="MediaMenu" title="MediaSat Menu" flags="wfNoBorder" position="fill">
+    <panel name="ButtonTemplate_R"/>
+    <panel name="PigTemplate"/>
+    <!-- MediaSat -->
+    <widget source="menu" render="Listbox" position="590,110" size="600,500" font="Regular;24" transparent="1" scrollbarMode="showOnDemand" selectionPixmap="PLi-HD/buttons/sel.png">
+      <convert type="TemplatedMultiContent">
+      {"template": [ 
+        MultiContentEntryText(pos = (45,9),size = (535,30),flags = RT_HALIGN_LEFT,text = 1) ],
+        "fonts": [gFont("Regular",24)],
+        "itemHeight": 45
+      }
+      </convert>
+    </widget>
+    <widget source="menu" render="Listbox" position="590,510" size="600,74" scrollbarMode="showNever" selectionDisabled="1" transparent="1" foregroundColor="secondFG" zPosition="2">
+      <convert type="TemplatedMultiContent">
+        {
+        "template": [ MultiContentEntryText(pos = (0,0),size = (450,60),flags = RT_HALIGN_CENTER|RT_VALIGN_BOTTOM|RT_WRAP,text = 2) ],
+        "fonts": [gFont("Regular",21)],
+        "itemHeight": 60
+        }
+      </convert>
+    </widget>
+  </screen>
+
+  <screen name="MediaImageManager" title="MediaSat Image Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGYB"/>
+    <panel name="KeyMenuTemplate"/>
+    <!-- MediaSat -->
+    <widget name="list" position="590,110" size="600,500" scrollbarMode="showOnDemand" transparent="1"/>
+    <widget name="backupstatus" position="590,500" size="600,20" font="Regular;20" zPosition="5" />
+    <widget name="lab1" position="590,525" size="600,77" font="Regular; 18" zPosition="2" transparent="0" halign="center" />
+    <applet type="onLayoutFinish">
+      self["list"].instance.setItemHeight(25)
+    </applet>
+  </screen>
+
+  <screen name="ImageManagerDownload" title="MediaSat Image Manager Download" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget name="list" position="590,110" size="600,500" scrollbarMode="showOnDemand" transparent="1"/>
+    <widget name="lab1" position="590,525" size="600,77" font="Regular; 18" zPosition="2" transparent="0" halign="center" />
+    <applet type="onLayoutFinish">
+      self["list"].instance.setItemHeight(25)
+    </applet>
+  </screen>
+
+  <screen name="MediaBackupManager" title="MediaSat Backup Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGY"/>
+    <panel name="KeyMenuTemplate"/>
+    <panel name="KeyInfoTemplate"/>
+    <!-- MediaSat -->
+    <widget name="list" position="590,110" size="600,500" scrollbarMode="showOnDemand" transparent="1"/>
+    <widget name="backupstatus" position="590,500" size="600,20" font="Regular;20" zPosition="5" />
+    <widget name="lab1" position="590,530" size="600,77" font="Regular; 18" zPosition="2" transparent="0" halign="center" />
+    <applet type="onLayoutFinish">
+      self["list"].instance.setItemHeight(25)
+    </applet>
+  </screen>
+
+  <screen name="MediaBackupManagerMenu" title="MediaSat Backup Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGYB"/>
+    <!-- MediaSat -->
+    <widget name="config" position="590,110" size="600,500" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1"/>
+    <widget name="footnote" position="590,500" size="600,20" zPosition="1" font="Regular;20" halign="left" transparent="1" valign="top" />
+    <widget name="description" position="590,530" size="600,77" font="Regular;18" halign="center" valign="top" transparent="0" zPosition="1" />
+  </screen>
+
+  <screen name="MediaBackupManagerLogView" position="0,0" size="1280,720" title="Backup Log" backgroundColor="transparent" flags="wfNoBorder">
+    <panel name="PigTemplate"/>
+    <!-- MediaSat -->
+    <widget name="list" position="590,110" size="600,500" font="Regular;16" />
+  </screen>
+
+  <screen name="BackupSelection" title="Backup Selection" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGY"/>
+    <!-- MediaSat -->
+    <widget name="checkList" position="590,110" size="600,500" transparent="0" scrollbarMode="showOnDemand" enableWrapAround="1" />
+  </screen>
+
+  <screen name="XtraPluginsSelection" title="Extra Plugins Selection" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget name="checkList" position="590,110" size="600,500" transparent="0" scrollbarMode="showOnDemand" enableWrapAround="1" />
+  </screen>
+
+  <screen name="RestoreMenu" title="Restore Menu" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGY"/>
+    <!-- MediaSat -->
+    <widget name="filelist" position="590,110" size="600,500" transparent="0" scrollbarMode="showOnDemand" />
+  </screen>
+
+	<!-- Blue Panel > Yellow > Timeline Menu -->
+
+  <screen name="MediaShowPanel" title="Restore Menu" flags="wfNoBorder" position="fill">
+    <panel name="BasicTemplate"/>
+    <!-- MediaSat -->
+    <widget source="list" render="Listbox" position="85,100" size="1200,500" scrollbarMode="showOnDemand" backgroundColor="secondBG" transparent="1" zPosition="1" font="Regular;25" valign="center" halign="left" >
+      <convert type="StringList" />
+    </widget>
+    <panel name="ButtonRed"/>
+    <widget name="close" position="185,643" zPosition="1" size="220,28" font="Regular;24" halign="left" backgroundColor="background" transparent="1" />
+  </screen>
+
+	<!-- Blue Panel > Blue > Configuration Menu -->
+
+  <screen name="MediasatSetup" title="Setup Config Panels" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="CancelOKTemplate"/>
+    <!-- MediaSat -->
+    <widget name="config" render="Listbox" position="590,110" size="600,500" font="Regular;24" transparent="1" scrollbarMode="showOnDemand" selectionPixmap="PLi-HD/buttons/sel.png" />
+  </screen>
+
+  <screen name="MediasatSetupSum" title="Setup Config" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_R"/>
+    <!-- MediaSat -->
+    <panel name="ListMenuMediaTX1"/>
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Periferiche Line1  -->
+
+  <screen name="MediaDevicesPanel" title="MediaSat Device Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGYB"/>
+    <!-- MediaSat -->
+    <widget name="lab1" zPosition="2" position="630,140" size="600,40" font="Regular;22" halign="center" transparent="1" />
+    <widget source="list" render="Listbox" position="580,110" size="640,500" zPosition="2" font="Regular;24" scrollbarMode="showOnDemand" selectionPixmap="PLi-HD/buttons/sel.png" transparent="1">
+      <convert type="TemplatedMultiContent">
+          {"template": [
+              MultiContentEntryText(pos = (100, 0), size = (690, 30), font=0, text = 0),
+              MultiContentEntryText(pos = (110, 30), size = (670, 50), font=1, flags = RT_VALIGN_TOP, text = 1),
+              MultiContentEntryPixmapAlphaTest(pos = (0, 0), size = (80, 80), png = 2),
+          ],
+          "fonts": [gFont("Regular", 24),gFont("Regular", 19)],
+          "itemHeight": 85
+          }
+      </convert>
+    </widget> 
+  </screen>
+
+  <screen name="MediaDevicesConf" title="MediaSat Devices Mountpoints" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget name="config" position="65,380" size="990,500" font="Regular;22" transparent="1" scrollbarMode="showOnDemand" selectionPixmap="PLi-HD/buttons/sel.png" />
+    <widget name="Linconn" position="65,380" size="990,200" font="Regular;18" halign="center" valign="center" backgroundColor="#009f1313" />
+  </screen>
+
+	<!-- Blue Panel > Red > HDD Panel Line2  -->
+
+  <screen name="MediaHddPanel" title="MediaSat HardDisk Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGY"/>
+    <!-- MediaSat -->
+    <widget name="infotext" position="590,110" size="600,400" zPosition="2" font="Regular;20" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab1" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labstop" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labstart" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Kernel Line4  -->
+
+  <screen name="MediaKernelModule" title="Kernel Download Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget source="list" render="Listbox" position="590,110" size="600,500" scrollbarMode="showOnDemand" transparent="1">
+      <convert type="TemplatedMultiContent">
+			{"template": [
+			MultiContentEntryText(pos = (50, 5), size = (720, 30), font=0, flags = RT_HALIGN_LEFT | RT_HALIGN_LEFT, text = 1),
+			MultiContentEntryPixmapAlphaTest(pos=(5, 1), size=(34, 34), png=3),
+			],
+			"fonts": [gFont("Regular", 20)],
+			"itemHeight": 40
+			}
+      </convert>
+    </widget>
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Swap Line3  -->
+
+  <screen name="MediaSwapPanel" title="Swap File Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGYB"/>
+    <!-- MediaSat -->
+    <widget name="autostart_off" position="550,129" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32" alphatest="on" />
+    <widget name="autostart_on" position="550,129" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32" alphatest="on" />
+    <widget name="lab1" position="590,131" size="500,30" font="Regular;30" valign="center" foregroundColor="grey" backgroundColor="black" transparent="1" />
+    <widget name="lab2" position="590,175" size="240,32" font="Regular;24" valign="center" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labplace" position="818,175" size="240,32" font="Regular;24" zPosition="1" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab3" position="590,216" size="240,32" font="Regular;24" valign="center" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labsize" position="818,216" size="240,32" font="Regular;24" zPosition="1" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab4" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="inactive" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="active" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Cronologia Line5  -->
+
+  <screen name="MediaCronManager" title="MediaSat Cron Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGYB"/>
+    <!-- MediaSat -->
+    <widget source="list" render="Listbox" position="590,110" size="600,435" scrollbarMode="showOnDemand" transparent="1">
+      <convert type="StringList" />
+    </widget>
+    <widget name="lab1" position="600,575" zPosition="3" size="140,28" font="Regular;20" valign="center" transparent="0" />
+    <widget name="labdisabled" position="745,575" zPosition="3" size="167,28" font="Regular;20" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labactive" position="745,575" zPosition="3" size="167,28" font="Regular;20" valign="center" halign="center" backgroundColor="green" />
+    <widget name="lab2" position="930,575" zPosition="3" size="140,28" font="Regular;20" valign="center" transparent="0" />
+    <widget name="labstop" position="1077,575" zPosition="3" size="167,28" font="Regular;20" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labrun" position="1077,575" zPosition="3" size="167,28" font="Regular;20" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+  <screen name="MediaSetupCronConf" title="MediaSat Cron Setup" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget name="config" position="590,110" size="600,500" scrollbarMode="showOnDemand" transparent="1" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Fast Plugin Line6  -->
+
+  <screen name="MediaFastPlugin" title="MediaSat Fast Plugin Setup" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_R"/>
+    <!-- MediaSat -->
+    <widget source="list" render="Listbox" position="590,110" size="600,500" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="PLi-HD/buttons/sel.png" transparent="1">
+      <convert type="TemplatedMultiContent">
+			             {"template": [
+			             MultiContentEntryText(pos = (130, 0), size = (610, 24), font=0, text = 0),
+			             MultiContentEntryText(pos = (130, 24), size = (610, 36), font=1, text = 1),
+			             MultiContentEntryPixmapAlphaTest(pos = (6, 5), size = (100, 40), png = 2),
+			             ],
+			             "fonts": [gFont("Regular", 24),gFont("Regular", 20)],
+			             "itemHeight": 50
+			             }
+				</convert>
+    </widget>
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Pcsc Line7  -->
+
+  <screen name="MediaPcsc" title="MediaSat Pcsc Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget name="lab1" position="590,110" size="600,500" font="Regular;24" valign="top" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab2" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labstop" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labrun" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore DTT Line8  -->
+
+  <screen name="MediaDttModule" title="DTT Download Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget source="list" render="Listbox" position="590,110" size="600,500" scrollbarMode="showOnDemand" transparent="1">
+      <convert type="TemplatedMultiContent">
+						{"template": [
+								MultiContentEntryText(pos = (50, 5), size = (720, 30), font=0, flags = RT_HALIGN_LEFT | RT_HALIGN_LEFT, text = 1),
+								MultiContentEntryPixmapAlphaTest(pos=(5, 1), size=(34, 34), png=4),
+								],
+						"fonts": [gFont("Regular", 20)],
+						"itemHeight": 40
+						}
+				</convert>
+    </widget>
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore WIFI Line9  -->
+
+  <screen name="MediaWifiModule" title="Wifi Download Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget source="list" render="Listbox" position="590,110" size="600,500" scrollbarMode="showOnDemand" transparent="1">
+      <convert type="TemplatedMultiContent">
+						{"template": [
+								MultiContentEntryText(pos = (50, 5), size = (720, 30), font=0, flags = RT_HALIGN_LEFT | RT_HALIGN_LEFT, text = 1),
+								MultiContentEntryPixmapAlphaTest(pos=(5, 1), size=(34, 34), png=4),
+								],
+						"fonts": [gFont("Regular", 20)],
+						"itemHeight": 40
+						}
+				</convert>
+    </widget>
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Network  -->
+
+  <screen name="MediaNetworkList" title="MediaSat Network List" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <!-- MediaSat -->    
+    <panel name="ListMenuMediaTX0"/>
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Network > OpenVPN  -->
+
+  <screen name="MediaOpenvpnPanel" title="MediaSat OpenVpn Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGYB"/>
+    <!-- MediaSat -->
+    <widget name="lab1" position="600,110" size="310,64" font="Regular;24" valign="center" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab4" zPosition="1" position="820,110" size="330,64" font="Regular;24" valign="center" foregroundColor="white" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab2" position="600,170" size="360,32" font="Regular;24" valign="center" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labactive" zPosition="1" position="820,170" size="310,32" font="Regular;24" valign="center" foregroundColor="white" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab3" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labstop" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labstart" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+  <screen name="MediaVpnLogPanel"  title="MediaSat OpenVpn Log" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <!-- MediaSat -->
+    <widget name="infotext" position="590,110" size="600,500" font="Regular;22" transparent="1" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Network > InaDyn  -->
+
+  <screen name="MediaInadynPanel" title="ItaltSat Inadyn Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGYB"/>
+    <!-- MediaSat -->
+    <widget name="labinactive" position="550,129" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32" alphatest="on" />
+    <widget name="labactive" position="550,129" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32" alphatest="on" />
+    <widget name="lab1" position="590,131" size="500,30" font="Regular;30" valign="center" foregroundColor="grey" backgroundColor="black" transparent="1" />
+    <widget name="lab3" position="550,170" size="150,32" font="Regular;24" valign="center" foregroundColor="blue" transparent="1" />
+    <widget name="labuser" position="725,170" size="410,32" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab4" position="550,220" size="150,30" font="Regular;24" valign="center" foregroundColor="blue" transparent="1" />
+    <widget name="labpass" position="725,220" size="410,32" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab5" position="550,270" size="150,32" font="Regular;24" valign="center" foregroundColor="blue" transparent="1" />
+    <widget name="labalias" position="725,270" size="410,32" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labinactive2" position="550,320" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32" alphatest="on" transparent="1" />
+    <widget name="labactive2" position="550,320" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32" alphatest="on" transparent="1" />
+    <widget name="lab6" position="590,320" size="130,32" font="Regular;24" valign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+    <widget name="labsys" position="725,320" size="410,32" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab2" position="590,390" size="400,30" font="Regular;24" valign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+    <widget name="labtime" position="995,390" size="120,32" font="Regular;24" valign="center" foregroundColor="white" backgroundColor="black" transparent="1" />
+    <widget name="lab7" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labstop" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labstart" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+  <screen name="MediaInadynLog" title="MediaSat Inadyn LogView" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <!-- MediaSat -->
+    <widget name="infotext" position="590,110" size="600,500" font="Regular;22" transparent="1" />
+  </screen>
+
+  <screen name="MediaInadynSetup" title="MediaSat Inadyn Config" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->    
+    <widget name="config" position="590,110" size="600,500" scrollbarMode="showOnDemand" transparent="1" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Network > Samba  -->
+
+  <screen name="MediaSambaPanel" title="MediaSat Cifs Samba Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget name="lab1" position="600,110" zPosition="1" size="400,32" font="Regular;24" valign="top" foregroundColor="blue" transparent="1" />
+    <widget name="labactive" position="955,110" zPosition="3" size="250,32" font="Regular;24" valign="center" foregroundColor="white" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab2" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labstop" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labstart" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Network > Telnet  -->
+
+  <screen name="MediaTelnetPanel" title="Telnet Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget name="lab1" position="590,110" size="600,500" font="Regular;24" valign="top" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab2" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labstop" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labstart" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Network > FTP  -->
+
+  <screen name="MediaFtpPanel" title="MediaSat FTP Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget name="lab1" position="590,110" size="600,500" font="Regular;24" valign="top" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab2" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labstop" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labstart" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Network > NFS  -->
+
+  <screen name="MediaNfsPanel" title="MediaSat Nfs Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGY"/>
+    <!-- MediaSat -->
+    <widget name="labinactive" position="550,117" zPosition="1" pixmap="skin_default/icons/lock_off.png" size="32,32" alphatest="on" />
+    <widget name="labactive" position="550,117" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32" alphatest="on" />
+    <widget name="lab1" position="600,117" size="350,30" font="Regular;20" valign="center" transparent="1" />
+    <widget name="lab2" position="600,167" size="230,30" font="Regular;20" valign="center" transparent="1" />
+    <widget name="labclient" position="845,167" size="140,30" font="Regular;20" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab3" position="600,213" size="230,30" font="Regular;20" valign="center" transparent="1" />
+    <widget name="labnetmask" position="845,213" size="140,30" font="Regular;20" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab4" position="600,262" size="230,30" font="Regular;20" valign="center" transparent="1" />
+    <widget name="labflags" position="845,262" size="350,30" font="Regular;20" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="sinactive" position="550,310" zPosition="2" pixmap="skin_default/icons/lock_off.png" size="32,32" alphatest="on" />
+    <widget name="sactive" position="550,310" zPosition="2" pixmap="skin_default/icons/lock_on.png" size="32,32" alphatest="on" />
+    <widget name="lab5" position="600,310" size="230,30" font="Regular;20" valign="center" transparent="1" />
+    <widget name="labport" position="845,310" size="140,30" font="Regular;20" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab6" position="600,362" size="230,30" font="Regular;20" valign="center" transparent="1" />
+    <widget name="labdir" position="845,362" size="350,30" font="Regular;20" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab7" position="600,417" size="230,30" font="Regular;20" valign="center" transparent="1" />
+    <widget name="labstop" position="845,417" size="156,30" font="Regular;20" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labrun" position="845,417" size="156,30" zPosition="1" font="Regular;20" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+  <screen name="MediaNfsSetup" title="MediaSat Nfs Setup" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_R"/>
+    <!-- MediaSat -->    
+    <widget name="config" position="590,110" size="600,500" scrollbarMode="showOnDemand" transparent="1" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Network > Djmount  -->
+
+  <screen name="MediaDjmountPanel" title="MediaSat UPnP Client Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->    
+    <widget name="lab1" position="590,110" size="600,500" font="Regular;24" valign="top" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab2" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labstop" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labstart" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Network > Mediatomb  -->
+
+  <screen name="MediaMediatombPanel" title="MediaSat UPnP Server Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget name="lab1" position="590,110" size="600,500" font="Regular;24" valign="top" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab2" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labstop" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labstart" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Network > MiniDLNa  -->
+
+  <screen name="MediaMinidlna" title="MediaSat MiniDLNa Server Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <widget name="lab1" position="590,110" size="600,500" font="Regular;24" valign="top" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab2" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labstop" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labrun" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+	<!-- Blue Panel > Red > Gestore Network > Apple AFP  -->
+
+  <screen name="MediaApple" title="MediaSat AFP Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGYB"/>
+    <!-- MediaSat -->
+    <widget name="lab1" position="590,110" size="600,500" font="Regular;24" valign="top" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="lab2" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="autostartstatus_summary" position="20,160" size="150,30" font="Regular;20" valign="center" transparent="1"/>
+    <widget name="labactive" position="259,89" size="250,32" font="Regular;20" valign="center" transparent="1" />
+    <widget name="status_summary" position="590,570" size="317,30" zPosition="3" font="Regular;24" valign="center" backgroundColor="transpBlack" transparent="1" />
+    <widget name="labstop" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="red" />
+    <widget name="labstart" position="910,570" size="236,30" zPosition="3" font="Regular;24" valign="center" halign="center" backgroundColor="green" />
+  </screen>
+
+  <!-- [****** MEDIASAT GREEN PANEL ******] -->
+  <!-- [****** MEDIASAT GREEN PANEL ******] -->
+  <!-- [****** MEDIASAT GREEN PANEL ******] -->
+  <!-- [****** MEDIASAT GREEN PANEL ******] -->
+
+  <!-- (XXX) [GREEN PANEL] Green Panel -->
+
+  <screen name="MediaGreen" title="MediaSat GreenPanel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGYB"/>
+    <!-- MediaSat -->
+    <widget source="list" render="Listbox" position="590,110" size="600,500" zPosition="1" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="PLi-HD/buttons/sel.png" backgroundColor="black" transparent="1">
+      <convert type="TemplatedMultiContent">
+	      	 	        {"template": [
+	      	 	        MultiContentEntryText(pos = (130, 0), size = (610, 30), font=0, text = 0),
+	      	 	        MultiContentEntryText(pos = (130, 24), size = (610, 30), font=1, text = 1),
+	      	 	        MultiContentEntryPixmapAlphaTest(pos = (6, 5), size = (100, 40), png = 2),
+	      	 	        ],
+	      	 	        "fonts": [gFont("Regular", 20),gFont("Regular", 14)],
+	      	 	        "itemHeight": 50
+	      	 	        }
+	      	 	</convert>
+    </widget>
+    <!-- MediaSat -->
+    <widget name="conn" render="Label" zPosition="1" position="65,380" size="625,60" font="Regular;20" valign="center" halign="left" foregroundColor="green" transparent="1" backgroundColor="black" />
+  </screen>
+
+	<!-- Green Panel > Blue > Memory -->
+	
+  <screen name="MediaMemoryPanel" title="MediaSat Memory Info" flags="wfNoBorder" position="fill">
+	<panel name="BasicTemplate"/>
+	<widget source="session.VideoPicture" render="Pig" position="800,110" size="417,243" backgroundColor="transparent" zPosition="1" />
+    <widget source="session.CurrentService" render="Label" position="800,89" size="417,20" zPosition="1" foregroundColor="secondFG" font="Regular;19" borderColor="black" noWrap="1" valign="center" halign="center">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+    <!-- MediaSat -->
+    <ePixmap position="60,122" zPosition="0" size="80,43" pixmap="skin_default/Media_icons/ico_sysflash.png" alphatest="blend" transparent="1" />
+    <ePixmap position="140,118" zPosition="0" size="159,21" pixmap="skin_default/Media_icons/sysbar_bw.png" alphatest="blend" transparent="1" />
+    <widget name="flashbar" position="140,118" pixmap="skin_default/Media_icons/sysbar.png" size="159,21" borderWidth="0" zPosition="1" borderColor="red" backgroundColor="black" transparent="1" />
+    <widget name="flash1" position="315,117" size="500,22" font="Regular;17" halign="left" zPosition="2" backgroundColor="black" transparent="1" />
+    <widget name="flash2" position="140,148" size="500,28" font="Regular; 20" halign="left" zPosition="1" transparent="1" foregroundColor="blue" backgroundColor="black" />
+    <ePixmap position="60,210" zPosition="0" size="80,80" pixmap="skin_default/Media_icons/ico_sysram.png" alphatest="blend" transparent="1" />
+    <ePixmap position="140,207" zPosition="0" size="159,21" pixmap="skin_default/Media_icons/sysbar_bw.png" alphatest="blend" transparent="1" />
+    <widget name="rambar" position="140,207" pixmap="skin_default/Media_icons/sysbar.png" size="159,21" borderWidth="0" zPosition="1" borderColor="red" backgroundColor="black" transparent="1" />
+    <widget name="ram1" position="143,207" size="159,21" font="Regular;17" halign="left" zPosition="2" backgroundColor="black" transparent="1" foregroundColor="orange" />
+    <widget name="ram2" position="315,207" size="500,22" font="Regular;17" halign="left" zPosition="2" backgroundColor="black" transparent="1" />
+    <ePixmap position="140,242" zPosition="0" size="159,21" pixmap="skin_default/Media_icons/sysbar_bw.png" alphatest="blend" transparent="1" />
+    <widget name="swapbar" position="140,242" pixmap="skin_default/Media_icons/sysbar.png" size="159,21" borderWidth="0" zPosition="1" borderColor="red" backgroundColor="black" transparent="1" />
+    <widget name="swap1" position="143,242" size="159,21" font="Regular;17" halign="left" zPosition="2" backgroundColor="black" transparent="1" foregroundColor="orange" />
+    <widget name="swap2" position="315,242" size="500,22" font="Regular;17" halign="left" zPosition="2" backgroundColor="black" transparent="1" />
+    <ePixmap position="140,277" zPosition="0" size="159,21" pixmap="skin_default/Media_icons/sysbar_bw.png" alphatest="blend" transparent="1" />
+    <widget name="totalbar" position="140,277" pixmap="skin_default/Media_icons/sysbar.png" size="159,21" borderWidth="0" zPosition="1" borderColor="red" backgroundColor="black" transparent="1" />
+    <widget name="total1" position="315,277" size="500,22" font="Regular;17" halign="left" zPosition="2" backgroundColor="black" transparent="1" />
+    <widget name="total2" position="140,307" size="500,28" font="Regular; 20" halign="left" zPosition="1" transparent="1" foregroundColor="blue" backgroundColor="black" />
+    <ePixmap position="50,180" size="760,40" pixmap="skin_default/Media_icons/linebox.png" zPosition="3" alphatest="blend" transparent="1" />
+    <ePixmap position="50,340" size="760,40" pixmap="skin_default/Media_icons/linebox.png" zPosition="3" alphatest="blend" transparent="1" />
+    <ePixmap position="60,375" zPosition="0" size="80,80" pixmap="skin_default/Media_icons/ico_syshdd.png" alphatest="blend" transparent="1" />
+    <ePixmap position="140,370" zPosition="0" size="159,21" pixmap="skin_default/Media_icons/sysbar_bw.png" alphatest="blend" transparent="1" />
+    <widget name="usbbar" position="140,370" pixmap="skin_default/Media_icons/sysbar.png" size="159,21" borderWidth="0" zPosition="1" borderColor="red" backgroundColor="black" transparent="1" />
+    <widget name="usb1" position="143,370" size="159,21" font="Regular;17" halign="left" zPosition="2" backgroundColor="black" transparent="1" foregroundColor="orange" />
+    <widget name="usb2" position="315,370" size="500,22" font="Regular;17" halign="left" zPosition="2" backgroundColor="black" transparent="1" />
+    <ePixmap position="140,420" zPosition="0" size="159,21" pixmap="skin_default/Media_icons/sysbar_bw.png" alphatest="blend" transparent="1" />
+    <widget name="hddbar" position="140,420" pixmap="skin_default/Media_icons/sysbar.png" size="159,21" borderWidth="0" zPosition="1" borderColor="blue" backgroundColor="black" transparent="1" />
+    <widget name="hdd1" position="143,420" size="159,21" font="Regular;17" halign="left" zPosition="1" backgroundColor="black" transparent="1" foregroundColor="orange" />
+    <widget name="hdd2" position="315,420" size="500,22" font="Regular;17" halign="left" zPosition="1" backgroundColor="black" transparent="1" />
+    <ePixmap position="140,470" zPosition="0" size="159,21" pixmap="skin_default/Media_icons/sysbar_bw.png" alphatest="blend" transparent="1" />
+    <widget name="cfbar" position="140,470" pixmap="skin_default/Media_icons/sysbar.png" size="159,21" borderWidth="0" zPosition="1" borderColor="blue" backgroundColor="black" transparent="1" />
+    <widget name="cf1" position="143,470" size="159,21" font="Regular;17" halign="left" zPosition="2" backgroundColor="black" transparent="1" foregroundColor="orange" />
+    <widget name="cf2" position="315,469" size="500,22" font="Regular;17" halign="left" zPosition="2" backgroundColor="black" transparent="1" />
+    <ePixmap position="140,520" zPosition="0" size="159,21" pixmap="skin_default/Media_icons/sysbar_bw.png" alphatest="blend" transparent="1" />
+    <widget name="totbar" position="140,520" pixmap="skin_default/Media_icons/sysbar.png" size="159,21" borderWidth="0" zPosition="1" borderColor="blue" backgroundColor="black" transparent="1" />
+    <widget name="tot1" position="140,555" size="500,28" font="Regular; 20" halign="left" zPosition="2" backgroundColor="black" transparent="1" foregroundColor="blue" />
+    <widget name="tot2" position="315,520" size="500,22" font="Regular;17" halign="left" zPosition="2" backgroundColor="black" transparent="1" />
+    <!-- Active Services Panel -->
+    <ePixmap name="ssh" size="210,25" position="900,382" zPosition="2" pixmap="skin_default/Media_icons/ssh.png" alphatest="blend" transparent="1" />
+    <ePixmap name="telnet" size="210,25" position="900,418" zPosition="2" pixmap="skin_default/Media_icons/telnet.png" alphatest="blend" transparent="1" />
+    <ePixmap name="ftp" size="210,25" position="900,460" zPosition="2" pixmap="skin_default/Media_icons/ftp.png" alphatest="blend" transparent="1" />
+    <ePixmap name="vpn" size="210,25" position="900,500" zPosition="2" pixmap="skin_default/Media_icons/vpn.png" alphatest="blend" transparent="1" />
+    <ePixmap name="samba" size="210,25" position="900,541" zPosition="2" pixmap="skin_default/Media_icons/samba.png" alphatest="blend" transparent="1" />
+    <ePixmap name="nfs" size="210,25" position="900,580" zPosition="2" pixmap="skin_default/Media_icons/nfs.png" alphatest="blend" transparent="1" />
+
+    <ePixmap size="60,25" position="1145,382" zPosition="1" pixmap="skin_default/Media_icons/spy_blue.png" alphatest="blend" transparent="1" />
+    <widget name="bot1" size="60,25" position="1145,382" zPosition="2" pixmap="skin_default/Media_icons/spy_gray.png" alphatest="on" transparent="1" />
+    <!--                                                                                                                                SSH -->
+    <ePixmap size="60,25" position="1145,418" zPosition="1" pixmap="skin_default/Media_icons/spy_blue.png" alphatest="blend" transparent="1" />
+    <widget name="bot2" size="60,25" position="1145,418" zPosition="2" pixmap="skin_default/Media_icons/spy_gray.png" alphatest="on" transparent="1" />
+    <!-- widget name="bot3" size="60,25" position="1145,446" zPosition="1" pixmap="skin_default/Media_icons/spy_gray.png" alphatest="on" transparent="1" TELNET -->
+    <ePixmap size="60,25" position="1145,460" zPosition="1" pixmap="skin_default/Media_icons/spy_blue.png" alphatest="blend" transparent="1" />
+    <widget name="bot4" size="60,25" position="1145,460" zPosition="2" pixmap="skin_default/Media_icons/spy_gray.png" alphatest="on" transparent="1" />
+    <!-- widget name="bot5" size="60,25" position="1145,487" zPosition="1" pixmap="skin_default/Media_icons/spy_gray.png" alphatest="on" transparent="1" FTP -->
+    <ePixmap size="60,25" position="1145,500" zPosition="1" pixmap="skin_default/Media_icons/spy_blue.png" alphatest="blend" transparent="1" />
+    <widget name="bot6" size="60,25" position="1145,500" zPosition="2" pixmap="skin_default/Media_icons/spy_gray.png" alphatest="on" transparent="1" />
+    <!-- widget name="bot7" size="60,25" position="1145,526" zPosition="1" pixmap="skin_default/Media_icons/spy_gray.png" alphatest="on" transparent="1" VPN -->
+    <ePixmap size="60,25" position="1145,541" zPosition="1" pixmap="skin_default/Media_icons/spy_blue.png" alphatest="blend" transparent="1" />
+    <widget name="bot8" size="60,25" position="1145,541" zPosition="2" pixmap="skin_default/Media_icons/spy_gray.png" alphatest="on" transparent="1" />
+    <!-- widget name="bot9" size="60,25" position="1145,564" zPosition="1" pixmap="skin_default/Media_icons/spy_gray.png" alphatest="on" transparent="1" SAMBA -->
+    <ePixmap size="60,25" position="1145,580" zPosition="1" pixmap="skin_default/Media_icons/spy_blue.png" alphatest="blend" transparent="1" />
+    <widget name="bot10" size="60,25" position="1145,580" zPosition="2" pixmap="skin_default/Media_icons/spy_gray.png" alphatest="on" transparent="1" />
+    <!-- widget name="bot11" size="60,25" position="1145,606" zPosition="1" pixmap="skin_default/Media_icons/spy_gray.png" alphatest="on" transparent="1" NFS -->
+  </screen>
+
+	<!-- Green Panel > Green > Script -->
+
+  <screen name="MediaScriptPanel" title="MediaSat Script" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_R"/>
+    <!-- MediaSat -->
+    <panel name="ListMenuMediaTXOnly0"/>
+    <widget name="labstatus" position="65,380" size="430,300" font="Regular;24" valign="left" foregroundColor="blue" transparent="1" />
+  </screen>
+
+	<!-- Connection for Green Panel Addons Download -->
+
+  <screen name="MediaConnection" position="center,center" size="542,280" title="Connect" flags="wfNoBorder">
+    <widget name="connect" position="0,0" size="542,280" zPosition="-1" pixmaps="skin_default/Media_icons/connection_1.png,skin_default/Media_icons/connection_1.png,skin_default/Media_icons/connection_2.png,skin_default/Media_icons/connection_2.png,skin_default/Media_icons/connection_5.png" transparent="1" />
+    <widget name="lab1" position="25,27" halign="center" size="460,60" zPosition="1" font="Regular;22" valign="top" transparent="1" />
+  </screen>
+
+	<!-- Green Panel > Red > Addon List -->
+
+  <screen name="MediaAddonsMenu" title="MediaSat Addons" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <!-- MediaSat -->
+    <panel name="ListMenuMediaTX1"/>
+    <widget source="conn" render="Label" zPosition="1" position="65,380" size="430,300" font="Regular;20" valign="top" halign="left" foregroundColor="blue" transparent="1" backgroundColor="black" />
+  </screen>
+
+	<!-- Green Panel > Red > Addon manager Line1 -->
+
+  <screen name="MediaAddonsManager" title="Addons Download Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <!-- MediaSat -->    
+    <panel name="ListMenuMediaTX0"/>
+  </screen>
+
+  <screen name="MediaSatDownManager" title="Downloads Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <!-- MediaSat -->    
+    <panel name="ListMenuMediaTXOnly0"/>
+  </screen>
+
+  <screen name="MediaDetailsPack" title="Package Details" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGY"/>
+    <!-- MediaSat -->
+    <widget name="infotext" position="600,110" size="600,500" font="Regular;24" transparent="1" />
+  </screen>
+
+  <screen name="MediaFilePreview" title="Preview" lags="wfNoBorder" position="fill">
+    <widget name="lab1" position="0,0" size="1280,720" zPosition="1" />
+    <widget name="lab2" position="310,38" size="660,30" zPosition="2" font="Regular;26" halign="center" valign="center" backgroundColor="black" foregroundColor="white" />
+  </screen>
+
+	<!-- Green Panel > Red > Extra CAM Download -->
+
+  <screen name="MediaExtraList" title="Extra Addons Manager" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->    
+    <panel name="ListMenuMediaTXOnly1"/>
+  </screen>
+
+  <screen name="MediaExtraDown" title="Downloads Extra Plugins" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RG"/>
+    <!-- MediaSat -->
+    <panel name="ListMenuMediaTXOnly1"/>
+    <widget source="conn" render="Label" zPosition="1" position="65,380" size="430,300" font="Regular;20" valign="top" halign="left" foregroundColor="blue" transparent="1" backgroundColor="black" />
+  </screen>
+
+  <screen name="MediaDownloader" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="CancelOKTemplate"/>
+    <!-- MediaSat -->
+    <widget source="fname" render="Label" position="300,380" size="600,60" font="Regular;18" halign="center" valign="center" foregroundColor="blue" backgroundColor="black" transparent="1" />
+    <widget source="progressbar" render="Progress" pixmap="PLi-HD/infobar/pbar.png" position="300,460" size="710,8" zPosition="2" transparent="1" />
+    <widget source="status" render="Label" position="300,480" zPosition="3" size="600,28" font="Regular;22" halign="center" backgroundColor="black" />
+  </screen>
+
+	<!-- Green Panel > Red > Remove Addon Line2 -->
+
+  <screen name="MediaRemoveAddons" title="Uninstall Panel" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_R"/>
+    <!-- MediaSat -->
+    <panel name="ListMenuMediaTXOnly1"/>
+    <widget source="conn" render="Label" zPosition="1" position="65,380" size="430,300" font="Regular;20" valign="top" halign="left" foregroundColor="blue" transparent="1" backgroundColor="black" />
+  </screen>
+
+	<!-- Green Panel > Red > Addon Manual Install -->
+
+  <screen name="MediaIPKInstaller" title="Manual Install Packages" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGY"/>
+    <!-- MediaSat -->
+	<widget name="lab1" position="590,110" size="600,30" zPosition="1" halign="center" font="Regular;25" backgroundColor="#9f1313" transparent="1"/>
+    <widget name="list" position="590,180" size="600,400" scrollbarMode="showOnDemand" transparent="1"/>
+  </screen>
+
+	<!-- FINE GREEN PANEL -->
+
+	<!-- MULTIBOOT -->
+
+	<screen name="MediaBootInstallation" title="MediaBoot - Installation" flags="wfNoBorder" position="fill">
+	    <panel name="PigTemplate"/>
+	    <panel name="ButtonTemplate_RGYB"/>
+	    <!-- MediaSat -->
+		<widget name="label1" position="590,110" size="600,30" zPosition="1" halign="center" font="Regular;25" backgroundColor="#9f1313" transparent="1"/>
+		<widget name="label2" position="590,180" size="600,290" zPosition="1" halign="center" font="Regular;20" backgroundColor="#9f1313" transparent="1"/>
+		<widget name="config" position="590,290" size="600,300" scrollbarMode="showOnDemand"/>
+	</screen>
+
+	<screen name="MediaBootImageChoose" title="MediaBoot - Menu" flags="wfNoBorder" position="fill">
+	    <panel name="PigTemplate"/>
+	    <panel name="ButtonTemplate_RGYB"/>
+	    <!-- MediaSat -->
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MediaBoot/icons/dev_hdd.png" position="590,180" size="80,80" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MediaBoot/icons/dev_usb.png" position="1110,180" size="80,80" alphatest="on" />
+		<widget name="label1" position="590,110" size="600,30" zPosition="1" halign="center" font="Regular;25" backgroundColor="#9f1313" transparent="1"/>
+		<widget name="label2" position="590,180" size="600,290" zPosition="1" halign="center" font="Regular;20" backgroundColor="#9f1313" transparent="1"/>
+		<widget name="config" position="590,290" size="600,300" scrollbarMode="showOnDemand"/>	</screen>
+
+	<screen name="MediaBootImageInstall" title="MediaBoot - Image Installation" flags="wfNoBorder" position="fill">
+	    <panel name="PigTemplate"/>
+	    <panel name="ButtonTemplate_RG"/>
+	    <!-- MediaSat -->
+		<widget name="config" position="590,110" size="600,500" scrollbarMode="showOnDemand" />
+	</screen>
+
+	<!-- Altri menu e Plugin -->
+	<!-- Altri menu e Plugin -->
+	<!-- Altri menu e Plugin -->
+	<!-- Altri menu e Plugin -->
+	<!-- Altri menu e Plugin -->
+
+	<!-- Download Linguaggi (ricordati di mettere il tasto ROSSO nel wizard e nel menu lingua della skin!!! Per richiamare questo pannello) -->
+
+  <screen name="LanguageDownload" title="Language Download" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_R"/>
+    <!-- MediaSat -->
+    <widget name="lab1" position="590,110" size="600,400" scrollbarMode="showOnDemand" transparent="1" />
+    <widget name="textinfo" position="590,550" zPosition="2" size="600,70" valign="center" halign="left" font="Regular;22" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+  </screen>
+
+	<!-- Gigablue VFD -->
+
+  <screen name="VFD_GigaSetup" title="VFD_Giga Setup" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGY"/>
+    <!-- MediaSat -->
+    <widget name="config" position="590,110" size="600,500" font="Regular;22" backgroundColor="transpBlack" transparent="1" />
+  </screen>
+
+	<!-- SVDownload Setting > Nel Green Panel > Button Red > Download Setting -->
+
+  <screen name="SVDownloaderSetup" title="SVDownloader" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGY"/>
+    <!-- MediaSat -->
+    <widget name="config" position="590,110" size="600, 250" scrollbarMode="showOnDemand" transparent="1" />
+    <widget name="Menu" pixmap="skin_default/buttons/key_menu.png" position="610,410" size="76,40" alphatest="on" />
+    <widget name="labelMenu" position="650,410" size="220, 28" valign="center" halign="left" zPosition="2" foregroundColor="white" font="Regular;24" transparent="1" />
+    <widget name="Help" pixmap="skin_default/buttons/key_help.png" position="610,450" size="76, 40" alphatest="on" />
+    <widget name="labelHelp" position="650,450" size="220, 28" valign="center" halign="left" zPosition="2" foregroundColor="white" font="Regular;24" transparent="1" />
+    <widget name="Info" pixmap="skin_default/buttons/key_info.png" position="610,490" size="76, 40" alphatest="on" />
+    <widget name="labelInfo" position="650,490" size="220, 28" valign="center" halign="left" zPosition="2" foregroundColor="white" font="Regular;24" transparent="1" />
+    <widget name="label" position="100,390" size="380, 40" valign="center" halign="left" zPosition="2" foregroundColor="white" font="Regular;24" transparent="1" />
+    <widget name="timerActive" pixmap="skin_default/icons/lock_on.png" position="75,400" size="32, 32" alphatest="on" zPosition="2" />
+    <widget name="timerInactive" pixmap="skin_default/icons/lock_off.png" position="75,400" size="32, 32" alphatest="on" zPosition="2" />
+    <widget name="Date" position="100,440" size="380, 40" valign="center" halign="left" zPosition="2" font="Regular;22" foregroundColor="blue" backgroundColor="transpBlack" transparent="1" />
+    <widget name="Comment" position="590,570" size="600,40" valign="center" halign="left" zPosition="2" foregroundColor="blue" font="Regular;24" transparent="1" />
+  </screen>
+
+  <screen name="timerSetupMenu" title="Timer Configuration" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGYB"/>
+    <!-- MediaSat -->
+    <widget name="config" position="590,110" size="600,500" scrollbarMode="showOnDemand" transparent="1" />
+    <widget name="Comment" position="65,380" size="300, 70" valign="center" halign="left" zPosition="2" foregroundColor="white" font="Regular;24" transparent="1" />
+  </screen>
+
+  <screen name="selectionSetList" title="Set List" flags="wfNoBorder" position="fill">
+    <panel name="PigTemplate"/>
+    <panel name="ButtonTemplate_RGYB"/>
+    <!-- MediaSat -->
+    <widget name="config" position="590,110" size="600,500" scrollbarMode="showOnDemand" transparent="1" />
+  </screen>
+
+</skin>
